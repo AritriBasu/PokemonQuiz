@@ -67,10 +67,9 @@ function changeQuestion(val)
     c.textContent=set[val].c;
     d.textContent=set[val].d;
  }
+
  function gameOver(marks)
  {
-     //temporary alert
-    alert("score is "+marks);
     //remove game
     game[0].style.display="none";
     //add count to score span
@@ -78,21 +77,41 @@ function changeQuestion(val)
     //display score
     score[0].style.display="block";
  }
+
 var f=0,i=0,count=0;
+
 function choice(ch)
- {
+ {  //if skipped,do nothing
+
+    //correct choice
      if (set[i].ans===ch)
      {
-        i++;
+        //color of correct id to green
+        ch.style.backgoundColor="green";
+        
+        //increase score 
         count++;
      }
-        if(i==5)
+     //wrong choice
+    else
+     {
+        //color of correct id to green
+
+        //color of chosen to red
+
+     }
+     i++;
+     if(i==5)
         {
             gameOver(count);
+        }  
+    else
+        {
+            changeQuestion(i);
         }
-            
-        else
-           changeQuestion(i);
+        
+        
+           
  }   
 
 function startGame()
