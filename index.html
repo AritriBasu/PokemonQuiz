@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="Pokemon.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+</head>
+<body>
+    <div class="container z-depth-4">
+            <div id="header">
+                <h2>POKEMON QUIZ</h2>
+            </div>
+            <div class="start">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxqS_7oxX7vIKCacn1_xtM-0DNzpnbyat4YZCTEPX3h2AWWkNb&usqp=CAU" alt="pikachu">
+                <br>
+                <button class="waves-effect waves-light btn-large" onclick="startGame()">START</button>
+            </div>
+            <div class="game">    
+                <div class="card-image">
+                    <img src="https://img.pokemondb.net/artwork/poliwhirl.jpg" id="pic">
+                </div>
+                <div class="card-content">
+                    <div class="question" id="q">Question</div>
+                    <div class="ans">
+                        <a class="waves-effect waves-light btn-large opt" id="a" onclick="choice(this.id)">Option1</a>
+                        <a class="waves-effect waves-light btn-large opt" id="b" onclick="choice(this.id)">Option2</a>
+                        <a class="waves-effect waves-light btn-large opt" id="c" onclick="choice(this.id)">Option3</a>
+                        <a class="waves-effect waves-light btn-large opt" id="d" onclick="choice(this.id)">Option4</a>
+                    </div>
+                </div>
+                <br>
+                <div class="card-action">
+                   <button class="btn">Next</button>
+                </div>
+            </div>
+            <div class="score">
+                <h4>YOU HAVE SCORED: <span id="sc"></span>/5</h4>
+                <img src="https://media1.giphy.com/media/11NlXRhFSZl4w8/source.gif" alt="celebration">
+            </div>
+    </div>
+            
+    
+    
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="Pokemon.js"></script>
+</body>
+</html>
