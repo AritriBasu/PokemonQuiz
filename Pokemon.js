@@ -87,7 +87,7 @@ function choice(ch)
      if (set[i].ans===ch)
      {
         //color of correct id to green
-        ch.style.backgoundColor="green";
+        
         
         //increase score 
         count++;
