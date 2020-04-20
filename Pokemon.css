@@ -3,6 +3,7 @@
 }
 body{
     background-color: #71d9cf;
+    background-image: url("https://i.pinimg.com/736x/d8/51/15/d851153e0fe59c94dbceefeab476845f.jpg");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,6 +22,24 @@ h2{
 h4{
     color: #2bbbad;
 }
+#quote{
+    font-style: oblique;
+}
+img{
+    max-width:100%;
+    width:50%;
+    max-height:60%;
+}
+#startimg{
+    border-radius: 10px;
+}
+#username{
+    max-width: 80%;
+    width:50%;
+    border:2px solid #2bbbad;
+    border-radius: 7px;
+    outline:none;
+}
 .card-action{
     display: flex;
     justify-content: center;
@@ -38,10 +57,4 @@ h4{
 .opt{
     width:130px;
     margin:4px solid white;
-}
-.correct{
-    background-color: green;
-}
-.wrong{
-    background-color: red;
 }
