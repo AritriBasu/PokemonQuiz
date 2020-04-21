@@ -21,9 +21,9 @@ var set=[
     },
     {
         pic:"https://img.pokemondb.net/artwork/drowzee.jpg",
-        question:"This is a pyshic type pokemon introduced in Generation 1",
+        question:"This is a pyshic type Pokémon introduced in Generation 1",
         a:"Hypnos",
-        b:"Drowsy",
+        b:"Drowzee",
         c:"Kadabra",
         d:"Mr.Mime",
         ans:"b"
@@ -36,6 +36,51 @@ var set=[
         c:"Kakuna",
         d:"Beedrill",
         ans:"b"
+    },
+    {
+        pic:"https://img.pokemondb.net/artwork/bellsprout.jpg",
+        question:"It is a grass type Pokémon that evovles into Weepinbell.",
+        a:"Bellsprout",
+        b:"Bulbasaur",
+        c:"Bloom",
+        d:"Vulpix",
+        ans:"a"
+    },
+    {
+        pic:"https://img.pokemondb.net/artwork/geodude.jpg",
+        question:"The longer this Pokémon lives, the more its edges are chipped and worn away, making it more rounded in appearance. However, this Pokémon's heart will remain hard, craggy, and rough always.",
+        a:"Rhyperion",
+        b:"Geodude",
+        c:"Golem",
+        d:"Blastoise",
+        ans:"b"
+    },
+    {
+        pic:"https://img.pokemondb.net/artwork/bellossom.jpg",
+        question:"When this Pokémon gets exposed to plenty of sunlight, the leaves ringing its body begin to spin around",
+        a:"Stauyu",
+        b:"Chikorita",
+        c:"Bellossom",
+        d:"Butterfree",
+        ans:"c"
+    },
+    {
+        pic:"https://img.pokemondb.net/artwork/psyduck.jpg",
+        question:"This Pokémon is consatntly severe headaches and its most poweful attack is Consusion Wave",
+        a:"Hitmonlee",
+        b:"Psyduck",
+        c:"Squirtle",
+        d:"Pikachu",
+        ans:"b"
+    },
+    {
+        pic:"https://img.pokemondb.net/artwork/poliwag.jpg",
+        question:"This is a water type Pokémon whose spiral innards are visible right through the skin",
+        a:"Goldeen",
+        b:"Poliwhirl",
+        c:"Staryu",
+        d:"Poliwag",
+        ans:"d"
     },
     {
         pic:"https://img.pokemondb.net/artwork/vileplume.jpg",
@@ -74,11 +119,13 @@ function changeQuestion(val)
     game[0].style.display="none";
     //add count to score span
     p.textContent=marks;
+
     //display score
     score[0].style.display="block";
  }
 
 var f=0,i=0,count=0;
+var timevar;
 
 function choice(ch)
  {  //if skipped,do nothing
@@ -88,31 +135,39 @@ function choice(ch)
      {
         //color of correct id to green
         
-        
+        $(ch).css("backgroundColor", "green");
+        console.log("correct answer"+ch);
         //increase score 
         count++;
      }
+
      //wrong choice
     else
      {
-        //color of correct id to green
 
         //color of chosen to red
+        $(ch).css("backgroundColor", "red");
+        console.log("wrong choice");
 
-     }
+        //color of correct id to green
+        $(set[i].ans).css("backgroundColor", "green");
+        console.log("the right answer "+set[i].ans);
+    }
      i++;
-     if(i==5)
+     
+     if(i==10)
         {
+            clearInterval(timevar);
             gameOver(count);
         }  
     else
         {
-            changeQuestion(i);
+            timevar=setInterval(changeQuestion(i),1000,i);
         }
         
         
            
- }   
+ } //end of choice  
 
 function startGame()
  {
