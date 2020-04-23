@@ -22,7 +22,7 @@ h2{
 h4{
     color: #2bbbad;
 }
-#quote{
+#q,#quote{
     font-style: oblique;
 }
 img{
@@ -32,13 +32,6 @@ img{
 }
 #startimg{
     border-radius: 10px;
-}
-#username{
-    max-width: 80%;
-    width:50%;
-    border:2px solid #2bbbad;
-    border-radius: 7px;
-    outline:none;
 }
 .card-action{
     display: flex;
