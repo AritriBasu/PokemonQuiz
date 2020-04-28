@@ -102,9 +102,14 @@ var set=[
     }
 ];
 
-
+var time;
 function changeQuestion(val)
  {
+     $(a).css("backgroundColor","#2bbbad");
+     $(b).css("backgroundColor","#2bbbad");
+     $(c).css("backgroundColor","#2bbbad");
+     $(d).css("backgroundColor","#2bbbad");
+     $(skip).css("backgroundColor","#2bbbad");
     document.getElementById("pic").src=set[val].pic;
     question.textContent=set[val].question;
     a.textContent=set[val].a;
@@ -122,10 +127,11 @@ function changeQuestion(val)
 
     //display score
     score[0].style.display="block";
+
+    clearInterval(time);
  }
 
 var f=0,i=0,count=0;
-var timevar;
 
 function choice(ch)
  {  //if skipped,do nothing
@@ -135,7 +141,7 @@ function choice(ch)
      {
         //color of correct id to green
         
-        $(ch).css("backgroundColor", "green");
+        $('#'+ch).css("backgroundColor", "green");
         console.log("correct answer"+ch);
         //increase score 
         count++;
@@ -146,23 +152,22 @@ function choice(ch)
      {
 
         //color of chosen to red
-        $(ch).css("backgroundColor", "red");
+        $('#'+ch).css("backgroundColor", "red");
         console.log("wrong choice");
 
         //color of correct id to green
-        $(set[i].ans).css("backgroundColor", "green");
+        $('#'+set[i].ans).css("backgroundColor", "green");
         console.log("the right answer "+set[i].ans);
     }
      i++;
      
-     if(i==10)
+     if(i==9)
         {
-            clearInterval(timevar);
-            gameOver(count);
+           gameOver(count);
         }  
     else
         {
-            timevar=setInterval(changeQuestion(i),1000,i);
+            time=setInterval(()=>changeQuestion(i),2000);
         }
         
         
